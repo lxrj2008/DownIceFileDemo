@@ -177,7 +177,7 @@ namespace DemoTest
         {
             if(AllData!=null && AllData.Rows.Count>0)
             {
-                var data=GetPagedTable(AllData, myPager1.PageIndex, myPager1.PageSize);
+                var data = GetPagedTable(AllData, myPager1.PageIndex, myPager1.PageSize);
                 dataGridView1.DataSource = data;
             }
         }
