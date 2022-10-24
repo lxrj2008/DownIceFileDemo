@@ -1,5 +1,5 @@
 ﻿
-namespace UpLoadToSFTP
+namespace DemoTest
 {
     partial class DownIceFile
     {
@@ -38,7 +38,7 @@ namespace UpLoadToSFTP
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.myPager1 = new UpLoadToSFTP.CSPager.MyPager();
+            this.myPager1 = new DemoTest.CSPager.MyPager();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +142,7 @@ namespace UpLoadToSFTP
             this.myPager1.SearchAllable = false;
             this.myPager1.Size = new System.Drawing.Size(563, 26);
             this.myPager1.TabIndex = 10;
-            this.myPager1.PageChanged += new UpLoadToSFTP.CSPager.PageChangedEventHandler(this.myPager1_PageChanged);
+            this.myPager1.PageChanged += new DemoTest.CSPager.PageChangedEventHandler(this.myPager1_PageChanged);
             // 
             // DownIceFile
             // 

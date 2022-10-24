@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UpLoadToSFTP.CSPager
+namespace DemoTest.CSPager
 {
     public delegate void PageChangedEventHandler(object sender, EventArgs e);
     public delegate void SearchAllEventHandler(object sender, EventArgs e);

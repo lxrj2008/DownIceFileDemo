@@ -1,5 +1,5 @@
 ﻿
-namespace UpLoadToSFTP.CSPager
+namespace DemoTest.CSPager
 {
     partial class MyPager
     {
