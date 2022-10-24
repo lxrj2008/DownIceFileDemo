@@ -37,8 +37,8 @@ namespace UpLoadToSFTP
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.myPager1 = new UpLoadToSFTP.CSPager.MyPager();
             this.button2 = new System.Windows.Forms.Button();
+            this.myPager1 = new UpLoadToSFTP.CSPager.MyPager();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace UpLoadToSFTP
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 82);
+            this.label1.Location = new System.Drawing.Point(36, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 1;
@@ -117,6 +117,16 @@ namespace UpLoadToSFTP
             this.dataGridView1.Size = new System.Drawing.Size(875, 287);
             this.dataGridView1.TabIndex = 8;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(597, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "关闭";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // myPager1
             // 
             this.myPager1.AutoSize = true;
@@ -133,16 +143,6 @@ namespace UpLoadToSFTP
             this.myPager1.Size = new System.Drawing.Size(563, 26);
             this.myPager1.TabIndex = 10;
             this.myPager1.PageChanged += new UpLoadToSFTP.CSPager.PageChangedEventHandler(this.myPager1_PageChanged);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(597, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "关闭";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // DownIceFile
             // 

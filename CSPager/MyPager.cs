@@ -218,9 +218,6 @@ namespace UpLoadToSFTP.CSPager
             this.btnLast.Enabled = enable;
 
             this.txtPageIndex.Text = this.m_PageIndex.ToString();
-            //this.labRecordCount.Text = string.Format("共 {0} 条记录，每页 {1} 条，共 {2} 页", this.m_RecordCount, this.m_PageSize, this.m_PageCount);
-            //this.labRecordCount.Text = string.Format("共 {0} 条记录，每页", this.m_RecordCount);
-            //this.labPageCount.Text = string.Format("条，共 {0} 页", this.m_PageCount);
 
             this.labRecordCount.Text = string.Format("Total Record:{0},Each Page", this.m_RecordCount);
             this.labPageCount.Text = string.Format("PageCount:{0}", this.m_PageCount);
@@ -288,7 +285,7 @@ namespace UpLoadToSFTP.CSPager
                 {
                     num = Convert.ToInt16(this.txtPageIndex.Text);
                 }
-                catch// (Exception ex)
+                catch
                 {
                     num = 1;
                 }
@@ -311,7 +308,7 @@ namespace UpLoadToSFTP.CSPager
                 {
                     num = Convert.ToInt32(this.txtPageSize.Text);
                 }
-                catch// (Exception ex)
+                catch
                 {
                     num = this.PageSize;
                 }                
@@ -327,7 +324,7 @@ namespace UpLoadToSFTP.CSPager
             {
                 num = Convert.ToInt16(this.txtPageSize.Text);
             }
-            catch// (Exception ex)
+            catch
             {
                 num = this.PageSize;
             }
@@ -344,11 +341,6 @@ namespace UpLoadToSFTP.CSPager
                     e.Handled = true;
                     return;
                 }
-                //if (Convert.ToInt32(this.txtPageSize.Text + e.KeyChar) > BaseSystemInfo.MaxPageSize)
-                //{
-                //    MessageBox.Show("最大分页件数不能超过" + BaseSystemInfo.MaxPageSize);
-                //    e.Handled = true;
-                //}
             }
         }
 
