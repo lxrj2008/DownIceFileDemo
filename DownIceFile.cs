@@ -186,5 +186,24 @@ namespace DemoTest
         {
             this.Close();
         }
+
+        private void DownIceFile_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("MQMExchangeCode");
+            dt.Columns.Add("ClearProductCode");
+            dt.Columns.Add("MMY");
+            dt.Columns.Add("MQMSecType");
+            dt.Columns.Add("BizDt");
+            dt.Columns.Add("PutCall");
+            dt.Columns.Add("StrikePx");
+            dt.Columns.Add("SettlementPx");
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Width = 120;
+            dataGridView1.Columns[1].Width = 120;
+            dataGridView1.Columns[6].Width = 130;
+            dataGridView1.Columns[7].Width = 150;
+            
+        }
     }
 }

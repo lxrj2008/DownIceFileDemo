@@ -40,8 +40,8 @@ namespace DemoTest
             this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.myPager1 = new DemoTest.CSPager.MyPager();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.myPager1 = new DemoTest.CSPager.MyPager();
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -118,13 +118,20 @@ namespace DemoTest
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(877, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(879, 320);
             this.dataGridView1.TabIndex = 8;
             // 
             // button2
@@ -153,7 +160,7 @@ namespace DemoTest
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(925, 479);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(919, 485);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // panel1
@@ -168,10 +175,22 @@ namespace DemoTest
             this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(23, 3);
+            this.panel1.Location = new System.Drawing.Point(20, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(879, 124);
+            this.panel1.Size = new System.Drawing.Size(879, 130);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.myPager1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(20, 450);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(879, 33);
+            this.panel2.TabIndex = 9;
             // 
             // myPager1
             // 
@@ -183,39 +202,33 @@ namespace DemoTest
             this.myPager1.PageIndex = 1;
             this.myPager1.PageSize = 100;
             this.myPager1.RecordCount = 0;
+            this.myPager1.SearchAllable = false;
             this.myPager1.Size = new System.Drawing.Size(563, 26);
             this.myPager1.TabIndex = 12;
             this.myPager1.PageChanged += new DemoTest.CSPager.PageChangedEventHandler(this.myPager1_PageChanged);
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.myPager1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(23, 447);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 29);
-            this.panel2.TabIndex = 9;
-            // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(23, 133);
+            this.panel3.Location = new System.Drawing.Point(20, 130);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(879, 308);
+            this.panel3.Size = new System.Drawing.Size(879, 320);
             this.panel3.TabIndex = 10;
             // 
             // DownIceFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 479);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(919, 485);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DownIceFile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "下载ice结算价";
+            this.Load += new System.EventHandler(this.DownIceFile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
