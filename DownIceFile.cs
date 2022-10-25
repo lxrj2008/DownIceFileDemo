@@ -78,7 +78,7 @@ namespace DemoTest
                         filename = $"NL{Month + Day}F.csv.zip";
                         FileWebSite = $"https://www.theice.com/publicdocs/irm_files/icnl/{Year}/{Month}/NL{Month + Day}F.csv.zip";
                     }
-                    var FileDirectory = @"D:\CMEReport\";
+                    var FileDirectory = @"e:\CMEReport\";
                     var FileFullPath = "";
                     //下载.zip
                     var IsSuccess = HttpHelper.DownloadFile(FileWebSite, FileDirectory, filename, ref FileFullPath, DownProgressDelegate);
