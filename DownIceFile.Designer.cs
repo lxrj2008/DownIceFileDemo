@@ -41,8 +41,8 @@ namespace DemoTest
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.myPager1 = new DemoTest.CSPager.MyPager();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.myPager1 = new DemoTest.CSPager.MyPager();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,7 +94,11 @@ namespace DemoTest
             "ICE欧洲",
             "ICE美国",
             "ICE荷兰",
-            "ICE新加坡"});
+            "ICE新加坡",
+            "CME",
+            "CBT",
+            "COMEX",
+            "NYMEX"});
             this.comboBox1.Location = new System.Drawing.Point(100, 10);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
@@ -192,6 +196,16 @@ namespace DemoTest
             this.panel2.Size = new System.Drawing.Size(879, 33);
             this.panel2.TabIndex = 9;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(20, 130);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(879, 320);
+            this.panel3.TabIndex = 10;
+            // 
             // myPager1
             // 
             this.myPager1.AutoSize = true;
@@ -206,16 +220,6 @@ namespace DemoTest
             this.myPager1.Size = new System.Drawing.Size(563, 26);
             this.myPager1.TabIndex = 12;
             this.myPager1.PageChanged += new DemoTest.CSPager.PageChangedEventHandler(this.myPager1_PageChanged);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(20, 130);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(879, 320);
-            this.panel3.TabIndex = 10;
             // 
             // DownIceFile
             // 
