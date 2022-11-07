@@ -43,7 +43,7 @@ namespace DemoTest
                     var FileList = ftp.GetFileList(true);
                     if (FileList.Count > 0)
                     {
-                        var match = $"CMEClearDB_backup_{DateTime.Now.ToString("yyyy_MM_dd")}_";
+                        var match = $"CMEClearDB_backup_{DateTime.Now.ToString("yyyy_MM_dd")}";
                         var realfile = FileList.Find(x => x.Contains(match));
                         if (realfile != null)
                         {

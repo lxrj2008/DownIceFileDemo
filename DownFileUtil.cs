@@ -316,7 +316,7 @@ namespace BizFirewall
 
                 ftpreq = (FtpWebRequest)FtpWebRequest.Create(uri);
                 ftpreq.UseBinary = true;
-                ftpreq.KeepAlive = false;
+                ftpreq.KeepAlive = true;
                 if (ifCredential)//使用用户身份认证  
                 {
                     ftpsize.Credentials = new NetworkCredential(FtpUserID, FtpPassword);
@@ -406,7 +406,7 @@ namespace BizFirewall
 
                 ftpreq = (FtpWebRequest)FtpWebRequest.Create(uri);
                 ftpreq.UseBinary = true;
-                ftpreq.KeepAlive = false;
+                ftpreq.KeepAlive = true;
                 ftpreq.ContentOffset = size;
                 if (ifCredential)//使用用户身份认证  
                 {
@@ -514,7 +514,7 @@ namespace BizFirewall
                 Uri uri = new Uri("ftp://" + FtpServerIP + "/");
                 var ftpreq = (FtpWebRequest)FtpWebRequest.Create(uri);
                 ftpreq.UseBinary = true;
-                ftpreq.KeepAlive = false;
+                ftpreq.KeepAlive = true;
                 ftpreq.Method = WebRequestMethods.Ftp.ListDirectory;
                 if (ifCredential)//使用用户身份认证  
                 {
@@ -562,7 +562,7 @@ namespace BizFirewall
                 }
                 Uri uri = new Uri("ftp://" + FtpServerIP + "/" + finfo.Name);
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(uri);
-                reqFTP.KeepAlive = false;
+                reqFTP.KeepAlive = true;
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(FtpUserID, FtpPassword);//用户，密码  
                 reqFTP.Method = WebRequestMethods.Ftp.UploadFile;//向服务器发出下载请求命令  
@@ -675,7 +675,7 @@ namespace BizFirewall
             reqFTP.Credentials = new NetworkCredential(FtpUserID, FtpPassword);
             // 默认为true，连接不会被关闭   
             // 在一个命令之后被执行   
-            reqFTP.KeepAlive = false;
+            reqFTP.KeepAlive = true;
             // 指定执行什么命令   
             reqFTP.Method = WebRequestMethods.Ftp.AppendFile;
             // 指定数据传输类型   
@@ -776,7 +776,7 @@ namespace BizFirewall
                     uri = "ftp://" + FtpServerIP + "/" + remoteFilepath + "/" + fi.Name;
                 }
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(uri);
-                reqFTP.KeepAlive = false;
+                reqFTP.KeepAlive = true;
                 reqFTP.UseBinary = true;
                 reqFTP.Credentials = new NetworkCredential(FtpUserID, FtpPassword);//用户，密码  
                 reqFTP.Method = WebRequestMethods.Ftp.GetFileSize;
