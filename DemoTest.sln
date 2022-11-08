@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoTest", "DemoTest.csproj", "{95C4E5BE-0B8E-4902-B9AA-223D1265898B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "..\WindowsFormsApp1\WindowsFormsApp1.csproj", "{C5FD5F93-ED42-4009-8FA1-838C18D64391}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{C5FD5F93-ED42-4009-8FA1-838C18D64391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
