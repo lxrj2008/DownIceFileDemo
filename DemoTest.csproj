@@ -105,6 +105,12 @@
     <Compile Include="CSPager\MyPager.Designer.cs">
       <DependentUpon>MyPager.cs</DependentUpon>
     </Compile>
+    <Compile Include="DownDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownDB.Designer.cs">
+      <DependentUpon>DownDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="DownIceFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     <Compile Include="DownFileUtil.cs" />
     <EmbeddedResource Include="CSPager\MyPager.resx">
       <DependentUpon>MyPager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownDB.resx">
+      <DependentUpon>DownDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DownIceFile.resx">
       <DependentUpon>DownIceFile.cs</DependentUpon>
