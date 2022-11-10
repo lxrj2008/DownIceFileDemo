@@ -331,6 +331,10 @@ namespace BizFirewall
                 response = (FtpWebResponse)ftpreq.GetResponse();
                 ftpStream = response.GetResponseStream();
                 long totalDownloadedByte = 0;
+                if (updateProgress != null)
+                {
+                    updateProgress((int)totalBytes, (int)totalDownloadedByte);//更新进度条     
+                }
                 int bufferSize = 2048;
                 int readCount;
                 byte[] buffer = new byte[bufferSize];
@@ -418,6 +422,10 @@ namespace BizFirewall
                 response = (FtpWebResponse)ftpreq.GetResponse();
                 ftpStream = response.GetResponseStream();               
                 long totalDownloadedByte = size;
+                if (updateProgress != null)
+                {
+                    updateProgress((int)totalBytes, (int)totalDownloadedByte);//更新进度条     
+                }
                 int bufferSize = 2048;
                 int readCount;
                 byte[] buffer = new byte[bufferSize];
