@@ -71,6 +71,7 @@ namespace DemoTest
                 }
             }).ContinueWith(x=>
             {
+                Thread.Sleep(5000);
                 Application.Exit();
             });
         }
