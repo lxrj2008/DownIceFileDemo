@@ -71,8 +71,7 @@ namespace DemoTest
                 }
             }).ContinueWith(x=>
             {
-                Thread.Sleep(5000);
-                Application.Exit();
+                MessageBox.Show("下载完成！");
             });
         }
     }
