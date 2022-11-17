@@ -54,7 +54,7 @@ namespace DemoTest
                             }
                             else
                             {
-                                Thread.Sleep(300000);
+                                Thread.Sleep(30000);
                                 continue;
                             }
                         }
@@ -65,7 +65,7 @@ namespace DemoTest
                     }
                     else
                     {
-                        Thread.Sleep(300000);
+                        Thread.Sleep(30000);
                         continue;
                     }
                 }

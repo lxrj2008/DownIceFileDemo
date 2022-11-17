@@ -420,7 +420,8 @@ namespace BizFirewall
 
                 ftpreq.Method = WebRequestMethods.Ftp.DownloadFile;
                 response = (FtpWebResponse)ftpreq.GetResponse();
-                ftpStream = response.GetResponseStream();               
+                ftpStream = response.GetResponseStream();
+                ftpStream.ReadTimeout = 30000;
                 long totalDownloadedByte = size;
                 if (updateProgress != null)
                 {
@@ -446,7 +447,7 @@ namespace BizFirewall
                 response.Dispose();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -492,7 +493,7 @@ namespace BizFirewall
                     }
                     return FtpBrokenDownload(remoteFileName, localFileName, ifCredential, size, updateProgress);
                 }
-                catch
+                catch(Exception ex)
                 {
                     return false;
                 }
