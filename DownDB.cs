@@ -35,33 +35,66 @@ namespace DemoTest
 
         private void DownDB_Load(object sender, EventArgs e)
         {
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
+            {
+                Task.Run(() =>
+                {
+                    var ftp = new FTPUtil("152.179.169.94", "usqsftp", "gF0aF0aM0r");
+                    while (true)
+                    {
+                        var FileList = ftp.GetFileList(true);
+                        if (FileList.Count > 0)
+                        {
+                            var match = $"CMEClearDB_backup_{DateTime.Now.ToString("yyyy_MM_dd")}";
+                            var realfile = FileList.Find(x => x.Contains(match));
+                            if (realfile != null)
+                            {
+                                var ret = ftp.FtpDownload(realfile, $@"F:\SystemRestory\SystemUserData\admin\Documents\{realfile}", true, true, WebDownProgressDelegate);
+                                if (ret)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Thread.Sleep(30000);
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Thread.Sleep(30000);
+                            continue;
+                        }
+                    }
+                }).ContinueWith(x =>
+                {
+                    MessageBox.Show("下载完成！");
+                });
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text=="")
+            {
+                MessageBox.Show("请输入要下载的文件");
+                return;
+            }
             Task.Run(() =>
             {
                 var ftp = new FTPUtil("152.179.169.94", "usqsftp", "gF0aF0aM0r");
                 while (true)
                 {
-                    var FileList = ftp.GetFileList(true);
-                    if (FileList.Count > 0)
+                    var realfile = textBox1.Text;
+                    var ret = ftp.FtpDownload(realfile, $@"F:\SystemRestory\SystemUserData\admin\Documents\{realfile}", true, true, WebDownProgressDelegate);
+                    if (ret)
                     {
-                        var match = $"CMEClearDB_backup_{DateTime.Now.ToString("yyyy_MM_dd")}";
-                        var realfile = FileList.Find(x => x.Contains(match));
-                        if (realfile != null)
-                        {
-                            var ret = ftp.FtpDownload(realfile, $@"F:\SystemRestory\SystemUserData\admin\Documents\{realfile}", true,true,WebDownProgressDelegate);
-                            if (ret)
-                            {
-                                break;
-                            }
-                            else
-                            {
-                                Thread.Sleep(30000);
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        break;
                     }
                     else
                     {
@@ -69,7 +102,7 @@ namespace DemoTest
                         continue;
                     }
                 }
-            }).ContinueWith(x=>
+            }).ContinueWith(x =>
             {
                 MessageBox.Show("下载完成！");
             });
